@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://7hg7je04itx8"]
+
+[ext_resource type="Script" uid="uid://c8ak3m1qtv7l" path="res://game.gd" id="1_t88pq"]
+[ext_resource type="Texture2D" uid="uid://dxlhqfu47ijuo" path="res://assets/background.png" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://bjy1c24lq0gf7" path="res://player.tscn" id="2_xkndl"]
+[ext_resource type="Script" uid="uid://cx3ovliu2nekl" path="res://finish.gd" id="3_u44n3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkndl"]
+size = Vector2(1627.5004, 97.49985)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u44n3"]
+size = Vector2(105.00018, 3082.502)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sosj5"]
+size = Vector2(115.62508, 2860.0015)
+
+[node name="Level" type="Node2D" unique_id=1281973710]
+position = Vector2(600, 220)
+rotation = 1.5707964
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_t88pq")
+
+[node name="Timer" type="Timer" parent="." unique_id=147823686]
+wait_time = 0.9
+autostart = true
+
+[node name="Background" type="Sprite2D" parent="." unique_id=388133036]
+texture_repeat = 2
+position = Vector2(677.5, 42.49999)
+texture = ExtResource("1_wbfu4")
+region_enabled = true
+region_rect = Rect2(0, -1650, 2500, 3650)
+
+[node name="Player" parent="." unique_id=1639402133 instance=ExtResource("2_xkndl")]
+position = Vector2(1007.49994, 60.000023)
+rotation = 4.712389
+scale = Vector2(4, 4)
+
+[node name="Borders" type="Node2D" parent="." unique_id=875353249]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=499783782]
+position = Vector2(-192.49997, 239.99998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=21960035]
+position = Vector2(533.7499, 1309.999)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_xkndl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1396470676]
+position = Vector2(-422.49997, -181.24988)
+scale = Vector2(0.99999917, 0.99999917)
+shape = SubResource("RectangleShape2D_u44n3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=679094358]
+position = Vector2(1322.5, -207.50012)
+scale = Vector2(0.9999992, 0.9999992)
+shape = SubResource("RectangleShape2D_u44n3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=984213684]
+position = Vector2(537.4999, -1677.4998)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_xkndl")
+
+[node name="Finish" type="Area2D" parent="Borders" unique_id=71868771]
+position = Vector2(-85.00001, -4.9999995)
+script = ExtResource("3_u44n3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Finish" unique_id=443251275]
+position = Vector2(-409.68744, 57.499878)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_sosj5")
+
+[node name="ColorRect" type="ColorRect" parent="Borders/Finish" unique_id=2081753645]
+offset_left = -477.50006
+offset_top = -1517.5
+offset_right = -364.9714
+offset_bottom = 1565.6707
+color = Color(0.34117648, 0.9254902, 0, 0.2627451)
+
+[node name="Cars" type="Node2D" parent="." unique_id=1573092121]
+
+[node name="SpawnLocations" type="Node2D" parent="." unique_id=338394377]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnLocations" unique_id=339631166]
+position = Vector2(875.00006, 1792.4998)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnLocations" unique_id=1816344986]
+position = Vector2(622.49994, 1792.4999)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnLocations" unique_id=2075112414]
+position = Vector2(37.50008, 1792.4999)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnLocations" unique_id=2134999880]
+position = Vector2(-89.99992, 1792.5)
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnLocations" unique_id=1582788234]
+position = Vector2(754.9998, -1617.4999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnLocations" unique_id=542760836]
+position = Vector2(494.99982, -1617.4999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnLocations" unique_id=2056056055]
+position = Vector2(-220.00009, -1617.4999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnLocations" unique_id=900579025]
+position = Vector2(-342.50006, -1617.4999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Borders/Finish" to="Borders/Finish" method="_on_body_entered"]

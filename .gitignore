@@ -1,0 +1,14 @@
+# Godot editor cache and generated files
+.godot/
+/export.cfg
+/export_credentials.cfg
+
+# Exported builds
+/Web Export/
+/builds/
+
+# macOS
+.DS_Store
+
+# Restricted course assets: do not redistribute
+/assets/

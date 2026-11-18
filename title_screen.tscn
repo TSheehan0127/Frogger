@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://2r1oy06oiobf"]
+
+[ext_resource type="Script" uid="uid://bllmcs3vis0ho" path="res://title_screen.gd" id="1_v6p8y"]
+
+[node name="TitleScreen" type="Control" unique_id=7217925]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_v6p8y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1074599204]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.89900005
+anchor_bottom = 0.88500005
+offset_right = 0.27990723
+offset_bottom = 10.799988
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.6, 1)
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1071672936]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.064453
+offset_top = -237.0
+offset_right = 52.0
+offset_bottom = -194.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start"
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=512300258]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Frogger"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
